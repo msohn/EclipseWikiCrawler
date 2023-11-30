@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: EclipseWikiCrawler
+Upstream-Contact: https://github.com/msohn
+Source: https://github.com/msohn/EclipseWikiCrawler
+
+Files:
+  *
+Copyright: 2023 Simeon Andreev, 2023 Matthias Sohn <matthias.sohn@gmail.com>
+License: BSD-3-Clause
