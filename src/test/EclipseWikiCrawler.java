@@ -108,6 +108,7 @@ public class EclipseWikiCrawler {
 
     private static int downloadImage(int downloadCount, String url, Path fileLocation) {
         Address address = new Address(url);
+        ensureExists(fileLocation.getParent());
         Image image = new Image(address, fileLocation);
         try {
             image.download();
@@ -120,6 +121,13 @@ public class EclipseWikiCrawler {
             System.err.println("Error when downloading " + address.url() + " : " + e.getMessage());
         }
         return downloadCount;
+    }
+
+    private static void ensureExists(Path parent) {
+        File parentFile = parent.toFile();
+        if (!parentFile.exists()) {
+            parentFile.mkdirs();
+        }
     }
 
     private static class Address {
